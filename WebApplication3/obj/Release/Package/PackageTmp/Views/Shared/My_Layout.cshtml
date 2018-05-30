@@ -1,0 +1,148 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        div.margins {
+            margin-top: 40px;
+        }
+
+        div.request {
+            background-color: blanchedalmond;
+            padding: 5%, 3%, 5%;
+            margin: 3% 3% 3% 3%;
+            text-align: center
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            text-align: center;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: burlywood;
+                }
+
+        .split {
+        }
+
+        /* Control the left side */
+        .left {
+            left: 0;
+            height: 100%;
+            width: 30%;
+            position: fixed;
+            z-index: 1;
+            overflow-x: hidden;
+            padding-top: 20px;
+            background-color: blanchedalmond;
+        }
+
+        a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            // appearance: button;
+            text-decoration: none;
+            color: initial;
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: palevioletred;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {
+            background-color: plum;
+        }
+
+        .button:active {
+            background-color: palevioletred;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        /* Control the right side */
+        .right {
+            right: 0;
+            height: 100%;
+            width: 70%;
+            position: fixed;
+            z-index: 1;
+            overflow-x: hidden;
+            padding-top: 20px;
+            background-color: lightgrey;
+        }
+
+        input {
+            background-color: whitesmoke;
+            border-color: lightgray;
+        }
+
+        select {
+            background-color: whitesmoke;
+            border-color: lightgray;
+        }
+
+        button {
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div style="margin-top:0%">
+        <ul>
+            <li><a href="/Home/Panel">Panel</a></li>
+            <li>@Html.ActionLink("Author", "Author", "Home", new { area = "" }, null)</li>
+            <li>@Html.ActionLink("Customer", "Customer", "Home", new { area = "" }, null)</li>
+
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+
+</html>

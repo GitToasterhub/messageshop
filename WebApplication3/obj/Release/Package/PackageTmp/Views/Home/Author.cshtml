@@ -1,0 +1,519 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+<ul>
+
+    <li style="position:center">   @Html.Partial("_LoginPartial")</li>
+
+</ul>
+
+<h2 style="text-align:center">Author View</h2>
+<p id="res"></p>
+<!--1.-->
+<div>
+    <div class="split right">
+        <div class="request">
+            <br />
+            <form action="">
+                <p>
+                    Для Автора <select id="txt1">
+                        @foreach (var item in Model.Author)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> знайти усіх покупців, які замовляли у нього повідомлення з дати
+                    <input type="date" id="txt2"> по дату
+                    <input type="date" id="txt3">
+                    хоча б
+                    <input type="text" id="txt4"> разів <br />
+                </p>
+                <button type="button" id="txt5">Пошук</button>
+            </form>
+            <br />
+        </div>
+        <!--4.-->
+        <div class="request">
+            <br />
+            <form action="">
+                <p>
+                    Знайти усіх покупців, які зробили хоча б <input type="text" id="txt41">
+                    замовлень з дати <input type="date" id="txt42">
+                    по дату <input type="date" id="txt43">.
+                    <br />
+                </p>
+                <button type="button" id="txt45">Пошук</button>
+            </form>
+            <br />
+        </div>
+        <!--6.-->
+        <div class="request">
+            <br />
+            <form action="">
+                <p>
+                    Для Автора  <select id="txt61">
+                        @foreach (var item in Model.Author)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> знайти усі облікові записи у соціальних мережах, для яких він зробив з дати
+                    <input type="date" id="txt62"> по дату
+                    <input type="date" id="txt63"> хоча б
+
+                    N: <input type="text" id="txt64"> записів.
+                </p>
+                <button type="button" id="txt65">Пошук</button>
+            </form>
+            <br />
+        </div>
+        <!--8.-->
+        <div class="request">
+            <br />
+            <form action="">
+                <p>
+                    Знайти усі спільні події для Покупця  <select id="txt81">
+                        @foreach (var item in Model.Customer)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> і Автора
+
+                    <select id="txt82">
+                        @foreach (var item in Model.Author)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> з дати
+                    <input type="date" id="txt83"> по дату
+                    <input type="date" id="txt84">
+                    <br />
+                </p>
+                <button type="button" id="txt85">Пошук</button>
+            </form>
+            <br />
+        </div>
+        <!--9.-->
+        <div class="request">
+            <br />
+            <form action="">
+                <p>
+                    Для Автора <select id="txt91">
+                        @foreach (var item in Model.Author)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> та кожної соціальної мережі, у якій він писав, знайти скільки разів він писав у групі хоча б з
+                    <input type="text" id="txt92"> авторів з дати
+                    <input type="date" id="txt93"> по дату
+                    <input type="date" id="txt94">
+                </p>
+                <br />
+                <button type="button" id="txt95">Пошук</button>
+            </form>
+            <br />
+        </div>
+        <!--12S.-->
+        <div class="request">
+            <form action="">
+                <p>
+                    Для Автора <select id="txt121">
+                        @foreach (var item in Model.Author)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> вивести усі соціальні мережі, у яких він писав з дати
+                    <input type="date" id="txt122"> по дату
+                    <input type="date" id="txt1223">
+                </p>
+                <br />
+                <button type="button" id="txt125">Пошук</button>
+            </form>
+            <br />
+        </div>
+        <!--12S.-->
+        <div class="request">
+            <form action="">
+                <p>
+                    Для Автора <select id="txt121">
+                        @foreach (var item in Model.Author)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select> вивести усі соціальні мережі, у яких він писав з дати
+                    <input type="date" id="txt122"> по дату
+                    <input type="date" id="txt1223">
+                </p>
+                <br />
+                <button type="button" id="txt125">Пошук</button>
+            </form>
+            <br />
+        </div>
+    </div>
+    <div class="split left">
+        <div class="request">
+            <table id="txtHint">Response:</table>
+        </div>
+    </div>
+</div>
+<script>
+    $("#txt5").click(function () {
+        request1("The paragraph was clicked.");
+    });
+    $("#txt25").click(function () {
+        request2("The paragraph was clicked.");
+    });
+    $("#txt35").click(function () {
+        request3("The paragraph was clicked.");
+    });
+    $("#txt45").click(function () {
+        request4("The paragraph was clicked.");
+    });
+    $("#txt55").click(function () {
+        request5("The paragraph was clicked.");
+    });
+    $("#txt65").click(function () {
+        request6("The paragraph was clicked.")
+    });
+    $("#txt75").click(function () {
+        request7("The paragraph was clicked.");
+    });
+    $("#txt85").click(function () {
+        request8("The paragraph was clicked.");
+    });
+    $("#txt95").click(function () {
+        request9("The paragraph was clicked.");
+    });
+    $("#txt105").click(function () {
+        request10("The paragraph was clicked.");
+    });
+    $("#txt115").click(function () {
+        request11("The paragraph was clicked.");
+    });
+    $("#txt125").click(function () {
+        request11("The paragraph was clicked.");
+    });
+
+
+    function request1(str) {
+        console.log('dhsgsg');
+        var xhttp;
+        var author = document.getElementById("txt1").value;
+        var from = document.getElementById("txt2").value;
+        var to = document.getElementById("txt3").value;
+        var N = document.getElementById("txt4").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Amount of orders, Customer</div>" + "<div>" + str + "</div>";
+                // document.getElementById("txtHint").innerHTML = "<table><tr><td>"+this.response.toString()+"</td></tr></table>" ;
+            }
+        };
+
+        console.log("/api/author/" + author + "/" + N + "/" + from + "/" + to);
+        xhttp.open("GET", "/api/author/" + author + "/" + N + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request2(str) {
+        var xhttp;
+        var author = document.getElementById("txt21").value;
+        var from = document.getElementById("txt22").value;
+        var to = document.getElementById("txt23").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Author</div>" + "<div>" + str + "</div>";
+
+            }
+        };
+
+        xhttp.open("GET", "/api/author/" + author + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request3(str) {
+        var xhttp;
+        var N = document.getElementById("txt31").value;
+        var from = document.getElementById("txt32").value;
+        var to = document.getElementById("txt33").value;
+
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Number of orders</div>" + "<div>" + str + "</div>";
+
+            }
+        };
+
+        xhttp.open("GET", "/api/author/" + N + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request4(str) {
+        var xhttp;
+        var N = document.getElementById("txt41").value;
+        var from = document.getElementById("txt42").value;
+        var to = document.getElementById("txt43").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Number of orders, Customer</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/customerr/" + from + "/" + N + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request5(str) {
+        var xhttp;
+        var customer = document.getElementById("txt51").value;
+        var from = document.getElementById("txt52").value;
+        var to = document.getElementById("txt53").value
+        var N = document.getElementById("txt54").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Number of orders, Customer</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/customerr/" + customer + "/" + N + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request6(str) {
+        var xhttp;
+        var author = document.getElementById("txt61").value;
+        var from = document.getElementById("txt62").value;
+        var to = document.getElementById("txt63").value
+        var N = document.getElementById("txt64").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Author,profile id, social network id, social network name</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/author/" + author + "/" + from + "/" + to + "/" + N, true);
+        xhttp.send();
+    }
+
+    function request7(str) {
+        var xhttp;
+        var customer = document.getElementById("txt71").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Author</div>" + "<div>" + str + "</div>";
+
+            }
+        };
+
+        xhttp.open("GET", "/api/customer/" + customer, true);
+        xhttp.send();
+    }
+
+    function request8(str) {
+        var xhttp;
+        var customer = document.getElementById("txt81").value;
+        var author = document.getElementById("txt82").value;
+        var from = document.getElementById("txt83").value;
+        var to = document.getElementById("txt84").value
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.response.toString();
+            }
+        };
+
+        xhttp.open("GET", "/api/customer/" + author + "/" + customer + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request9(str) {
+        var xhttp;
+        var author = document.getElementById("txt91").value;
+        var N = document.getElementById("txt92").value;
+        var from = document.getElementById("txt93").value;
+        var to = document.getElementById("txt94").value
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Count</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/customer/" + N + "/" + author + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+    function request10(str) {
+        var xhttp;
+        var customer = document.getElementById("txt101").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Count, Type</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/customer/" + customer, true);
+        xhttp.send();
+    }
+
+    function request11(str) {
+        var xhttp;
+        var from = document.getElementById("txt111").value;
+        var to = document.getElementById("txt112").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Count</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/customer/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+    function request12(str) {
+        var xhttp;
+        var author = document.getElementById("txt121").value;
+        var from = document.getElementById("txt122").value;
+        var to = document.getElementById("txt123").value;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var str = "";
+                var list = JSON.parse(this.response.toString());
+                for (var i = 0; i < list.length; ++i) {
+                    str = str + list[i].toString() + "<br/>";
+                }
+
+                document.getElementById("txtHint").innerHTML = "<div>Count, Social network</div>" + "<div>" + str + "</div>";
+            }
+        };
+
+        xhttp.open("GET", "/api/customer/" + author + "/" + from + "/" + to, true);
+        xhttp.send();
+    }
+
+
+</script>

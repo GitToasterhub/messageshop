@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    body {
+        background-color: antiquewhite;
+    }
+</style>
+<div style="margin-top:0%">
+    <ul>
+
+        <li style="position:center">   @Html.Partial("_LoginPartial")</li>
+
+    </ul>
+
+</div>
+<div class="">
+    <h3 style="text-align:center">Messages shop admin panel</h3>
+</div>
+
+<div>
+    <br /><br />
+    <div style="text-align:center">
+        <h2 style="text-align:center">To use this application, please Register or LogIn</h2>
+        <br /><br />
+        <a class="button" href="/Account/Login">LogIn</a>
+        <a class="button" href="/Account/Register">Register</a>
+
+    </div>
+
+</div>
